@@ -1,4 +1,4 @@
-# TenantDash — Multi-Tenant Dashboard Web App
+# TenantDash (Multi-Tenant Dashboard Web App)
 
 A full-stack multi-tenant dashboard with role-based access control, built with **Flask + React + Supabase**.
 
@@ -42,7 +42,7 @@ Supabase PostgreSQL (RLS as second layer of defense)
 
 ### Why Two Layers of Security?
 1. **Flask middleware** verifies the Supabase JWT and fetches `org_id` + `role` from the DB on every request. All SQL queries are explicitly scoped to the user's org.
-2. **Supabase RLS policies** act as a second firewall — even if the backend were bypassed, the DB would still refuse cross-org queries.
+2. **Supabase RLS policies** act as a second firewall; even if the backend were bypassed, the DB would still refuse cross-org queries.
 
 ---
 
@@ -56,10 +56,10 @@ Supabase PostgreSQL (RLS as second layer of defense)
 ### 1.2 Run the SQL Schema
 1. In your Supabase dashboard → **SQL Editor** → **New Query**
 2. Paste the entire contents of `supabase_setup.sql`
-3. Click **Run** — this creates tables, RLS policies, indexes, and a seed function
+3. Click **Run**; this creates tables, RLS policies, indexes, and a seed function
 
 ### 1.3 Collect Your Credentials
-From your Supabase project → ** Project Settings → API**:
+From your Supabase project → ** Project Settings → API **:
 
 | Credential | Where to find it |
 |---|---|
@@ -158,7 +158,7 @@ This inserts 10 sales + 10 activities for **every profile** in the DB, spread ov
 |---|---|
 | `admin@acme.com` | Sees ALL Acme Corp data, team members, aggregated charts |
 | `user@acme.com` | Sees ONLY their own sales and activities |
-| `admin@globex.com` | Sees ALL Globex data — NO Acme data visible |
+| `admin@globex.com` | Sees ALL Globex data; NO Acme data visible |
 | `user@globex.com` | Sees ONLY their own data within Globex |
 
 ---
@@ -237,7 +237,7 @@ dashboard-app/
 ## Key Implementation Details
 
 ### Multi-Tenancy
-Every query to `sales` and `activities` **always** includes `.eq('organization_id', org_id)` where `org_id` comes from the server-verified JWT — never from the client request body.
+Every query to `sales` and `activities` **always** includes `.eq('organization_id', org_id)` where `org_id` comes from the server-verified JWT; never from the client request body.
 
 ### Role-Based Access
 `role` is fetched from the `profiles` table on the server using the service-role key. The client cannot inject or spoof it. Admin routes use the `@admin_required` decorator which checks `g.role`.
