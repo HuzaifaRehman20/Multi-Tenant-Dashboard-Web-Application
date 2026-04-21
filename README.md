@@ -8,7 +8,7 @@ A full-stack multi-tenant dashboard with role-based access control, built with *
  
 ![TenantDash Admin Dashboard](./Dashboard_UI.png)
  
-> **Admin view** — aggregated organization revenue, activity breakdown by category (D3.js bar chart), and sales trend over time (Chart.js line chart). The dashboard dynamically switches between admin and user views based on the logged-in user's role.
+> **Admin view**; aggregated organization revenue, activity breakdown by category (D3.js bar chart), and sales trend over time (Chart.js line chart). The dashboard dynamically switches between admin and user views based on the logged-in user's role.
  
 ---
 
