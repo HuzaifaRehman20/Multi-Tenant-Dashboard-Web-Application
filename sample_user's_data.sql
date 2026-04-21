@@ -1,5 +1,5 @@
 -- =============================================================
--- SAMPLE DATA FOR BOTH ORGANIZATION'S e,g, JANE & BILL
+-- SAMPLE DATA FOR BOTH ORGANIZATION'S e.g. JANE & BILL
 -- Jane (user@acme.com)     — Acme Corp     — High-value sales, Demo/Meeting heavy
 -- Bill (user@globex.com)   — Globex Ind.   — Steady smaller sales, Call/Email heavy
 -- Run this in Supabase SQL Editor
